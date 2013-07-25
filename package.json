@@ -1,21 +1,21 @@
 {
-  "name": "ip-tag",
+  "name": "mysql-import",
   "types": ["module"],
   "version": "1.4",
-  "homepage": "http://github.com/shinken-monitoring/mod-ip-tag",
-  "author": "Jean Gabès",
-  "description": "Tag host by their IP ranges",
+  "homepage": "http://github.com/shinken-monitoring/mod-import-mysql",
+  "author": "Olivier Hanesse",
+  "description": "Import Shinken configuration from a Mysql Server",
   "contributors": [
     {
-      "name": "Jean Gabès",
-      "email": "naparuba@gmail.com"
+      "name": "Olivier Hanesse",
+      "email": "olivier.hanesse@gmail.com"
     }
   ],
-  "repository": "https://github.com/shinken-monitoring/mod-ip-tag",
+  "repository": "https://github.com/shinken-monitoring/mod-import-mysql",
   "keywords": [
     "module",
     "arbiter",
-    "ip"
+    "mysql"
   ],
   "dependencies": {
     "shinken": ">=1.4"

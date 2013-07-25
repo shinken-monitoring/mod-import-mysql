@@ -1,4 +1,4 @@
 mod-import-mysql
 ================
 
-Shinken module for importing hosts from a MySQL server
+Shinken module for importing configuration  from a MySQL server
