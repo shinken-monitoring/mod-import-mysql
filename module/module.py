@@ -55,6 +55,7 @@ def get_instance(plugin):
     reqlist['services'] = getattr(plugin, 'reqservices', None)
     reqlist['contacts'] = getattr(plugin, 'reqcontacts', None)
     reqlist['contactgroups'] = getattr(plugin, 'reqcontactgroups', None)
+    reqlist['hostgroups'] = getattr(plugin, 'reqhostgroups', None)
     reqlist['hostdependencies'] = getattr(plugin, 'reqhostdependencies', None)
     reqlist['servicedependencies'] = getattr(plugin, 'reqservicedependencies', None)
     reqlist['realms'] = getattr(plugin, 'reqrealms', None)
