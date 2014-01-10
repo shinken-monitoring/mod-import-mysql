@@ -15,7 +15,9 @@
   "keywords": [
     "module",
     "arbiter",
-    "mysql"
+    "mysql",
+    "configuration",
+    "import"
   ],
   "dependencies": {
     "shinken": ">=1.4"
