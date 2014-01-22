@@ -52,7 +52,11 @@ def get_instance(plugin):
     database = plugin.database
     reqlist = {}
     reqlist['hosts'] = getattr(plugin, 'reqhosts', None)
+    reqlist['commands'] = getattr(plugin, 'reqcommands', None)
+    reqlist['timeperiods'] = getattr(plugin, 'reqtimeperiods', None)
+    reqlist['notificationways'] = getattr(plugin, 'reqnotificationways', None)
     reqlist['services'] = getattr(plugin, 'reqservices', None)
+    reqlist['servicegroups'] = getattr(plugin, 'reqservicegroups', None)
     reqlist['contacts'] = getattr(plugin, 'reqcontacts', None)
     reqlist['contactgroups'] = getattr(plugin, 'reqcontactgroups', None)
     reqlist['hostgroups'] = getattr(plugin, 'reqhostgroups', None)
