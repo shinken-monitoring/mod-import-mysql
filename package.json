@@ -1,7 +1,7 @@
 {
   "name": "mysql-import",
   "types": ["module"],
-  "version": "1.4",
+  "version": "1.0",
   "homepage": "http://github.com/shinken-monitoring/mod-import-mysql",
   "author": "Olivier Hanesse",
   "description": "Import Shinken configuration from a Mysql Server",
@@ -16,6 +16,7 @@
     "module",
     "arbiter",
     "mysql",
+    "database"
     "configuration",
     "import"
   ],
