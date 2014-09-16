@@ -133,5 +133,5 @@ class MySQL_importer_arbiter(BaseModule):
         self.conn.close()
         del self.conn
 
-        print "[MySQLImport]: Returning to Arbiter the object:", r
+        logger.debug("[MySQLImport]: Returning to Arbiter the object: %s" % str(r))
         return r
