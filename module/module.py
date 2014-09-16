@@ -126,7 +126,7 @@ class MySQL_importer_arbiter(BaseModule):
                     h = {}
                     for column in row:
                         if row[column]:
-                            h[column] = row[column]
+                            h[column] = str(row[column])
                     r[k].append(h)
 
         cursor.close()
