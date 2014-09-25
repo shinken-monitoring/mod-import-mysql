@@ -30,6 +30,8 @@ try:
 except ImportError:
     MySQLdb = None
 
+import chardet
+
 from shinken.basemodule import BaseModule
 from shinken.log import logger
 
@@ -96,6 +98,17 @@ class MySQL_importer_arbiter(BaseModule):
             raise
         logger.info("[MySQLImport]: Connection opened")
 
+    def ensure_encoding(self, value):
+        try:
+            value.decode('utf-8')
+        except UnicodeDecodeError, e:
+            encoding = chardet.detect(value)['encoding'] or 'latin1'
+            logger.warning("[MySQLImport]: Error decoding string " + \
+                "(value='%s', encoding='%s')" % (value, encoding) + \
+                ". Failing back to utf-8")
+            value = value.decode(encoding).encode('utf-8')
+        return value
+
     # Main function that is called in the CONFIGURATION phase
     def get_objects(self):
         if not hasattr(self, 'conn'):
@@ -126,7 +139,8 @@ class MySQL_importer_arbiter(BaseModule):
                     h = {}
                     for column in row:
                         if row[column]:
-                            h[column] = str(row[column])
+                            value = str(row[column])
+                            h[column] = self.ensure_encoding(value)
                     r[k].append(h)
 
         cursor.close()
