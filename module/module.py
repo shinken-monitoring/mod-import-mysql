@@ -30,7 +30,10 @@ try:
 except ImportError:
     MySQLdb = None
 
-import chardet
+try:
+    import chardet
+except ImportError:
+    chardet = None
 
 from shinken.basemodule import BaseModule
 from shinken.log import logger
@@ -140,7 +143,9 @@ class MySQL_importer_arbiter(BaseModule):
                     for column in row:
                         if row[column]:
                             value = str(row[column])
-                            h[column] = self.ensure_encoding(value)
+                            if chardet:
+                                value = self.ensure_encoding(value)
+                            h[column] = value
                     r[k].append(h)
 
         cursor.close()
