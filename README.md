@@ -1,3 +1,4 @@
+<a href='https://travis-ci.org/shinken-monitoring/mod-import-mysql'><img src='https://api.travis-ci.org/shinken-monitoring/mod-import-mysql.svg?branch=master' alt='Travis Build'></a>
 mod-import-mysql
 ================
 
